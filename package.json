@@ -1,0 +1,39 @@
+{
+  "name": "jwt-plus",
+  "version": "0.1.3",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc && npm run update",
+    "update": "auto-vers -t",
+    "docs": "jsdoc2md -t ./readme/README_tpl.hbs --files ./dist/*.js  >| README.md",
+    "test": "mocha --require ts-node/register test/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hua1995116/jwt.git"
+  },
+  "keywords": [
+    "jwt",
+    "ts",
+    "node",
+    "typescript"
+  ],
+  "author": "hua199116 <qiufenghyf@163.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hua1995116/jwt/issues"
+  },
+  "homepage": "https://github.com/hua1995116/jwt#readme",
+  "devDependencies": {
+    "@types/node": "^10.12.18",
+    "@types/mocha": "^5.2.6",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "auto-vers": "^1.0.2",
+    "jsdoc-to-markdown": "^4.0.1",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.2.4"
+  },
+  "description": ""
+}
