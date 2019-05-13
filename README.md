@@ -5,12 +5,17 @@
 
 # Install
 ```shell
-
+npm install jwt-plus
 ```
 
 
 # Usage
 ```javascript
+import {encode, decode} from 'jwt-plus'
+const payload = {k: 1};
+const token = encode(payload, secret);
+const [isPass, parseValue] = decode(token, secret);
+// [true, {k: 1, exp: XXX}]
 
 ```
 
