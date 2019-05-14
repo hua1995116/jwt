@@ -7,7 +7,7 @@
     "build": "tsc && npm run update",
     "update": "auto-vers -t",
     "docs": "jsdoc2md -t ./readme/README_tpl.hbs --files ./dist/*.js  >| README.md",
-    "test": "mocha --require ts-node/register test/**/*.ts"
+    "test": "nyc mocha test/*.ts && ./node_modules/.bin/codecov"
   },
   "repository": {
     "type": "git",
@@ -26,14 +26,35 @@
   },
   "homepage": "https://github.com/hua1995116/jwt#readme",
   "devDependencies": {
-    "@types/node": "^10.12.18",
     "@types/mocha": "^5.2.6",
-    "chai": "^4.2.0",
-    "mocha": "^6.1.4",
+    "@types/node": "^10.12.18",
     "auto-vers": "^1.0.2",
+    "chai": "^4.2.0",
+    "codecov": "^3.4.0",
     "jsdoc-to-markdown": "^4.0.1",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "ts-node": "^8.1.0",
     "typescript": "^3.2.4"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts",
+      "src/**/*.tsx"
+    ],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "reporter": [
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true,
+    "instrument": true
   },
   "description": ""
 }
